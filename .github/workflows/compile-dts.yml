@@ -1,0 +1,26 @@
+name: Compile DTS to DTB
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install dependencies
+      run: sudo apt-get update && sudo apt-get install -y device-tree-compiler
+
+    - name: Compile DTS to DTB
+      run: |
+        for file in *.dts; do
+          dtc -I dts -O dtb -o "${file%.dts}.dtb" "$file"
+        done
+
+    - name: Upload DTB files
+      uses: actions/upload-artifact@v2
+      with:
+        name: dtb-files
+        path: '*.dtb'
