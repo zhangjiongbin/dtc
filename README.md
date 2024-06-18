@@ -98,5 +98,7 @@ values.
 * Core device tree bindings are discussed on the
   [devicetree-spec](mailto:devicetree-spec@vger.kernel.org) list.
 
+
+
 说明，上面那些都没用，直接把dts放到这个目录下面，然后actions直接转化为dtb
 #2024-6-18
