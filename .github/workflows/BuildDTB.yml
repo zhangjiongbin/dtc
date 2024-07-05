@@ -22,10 +22,10 @@ jobs:
     - name: Compile DTS to DTB
       run: |
         mkdir -p output
-        dtc -I dts -O dtb -o output/example.dtb path/to/your/example.dts
+        dtc -I dts -O dtb -o YS-F3588A2.dtb YS-F3588A2.dts
 
     - name: Upload DTB file
       uses: actions/upload-artifact@v2
       with:
-        name: example-dtb
-        path: output/example.dtb
+        name: YS-F3588A2-dtb
+        path: /YS-F3588A2.dtb
