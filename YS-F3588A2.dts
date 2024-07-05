@@ -15976,7 +15976,6 @@
 		compatible = "wlan-platdata";
 		wifi_chip_type = "ap6275p";
 		wifi_power_ctrl = <1>;
-		ref_wifi_clk = <&clk_wifi>;
 		pinctrl-names = "default";
 		pinctrl-0 = <0x2bb>;
 		WIFI,host_wake_irq = <0x163 0x0b 0x00>;
