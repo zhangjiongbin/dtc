@@ -24,8 +24,23 @@ jobs:
         mkdir -p output
         dtc -I dts -O dtb -o YS-F3588A2.dtb YS-F3588A2.dts
 
-    - name: Upload DTB file
-      uses: actions/upload-artifact@v2
+   - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       with:
-        name: YS-F3588A2-dtb
-        path: test/search_dir
+        tag_name: 'v1.0.0'  # 可根据需要修改版本号
+        release_name: 'DTB Release'
+        draft: false
+        prerelease: false
+
+    - name: Upload DTB to Release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: YS-F3588A2.dtb
+        asset_name: YS-F3588A2.dtb
+        asset_content_type: application/octet-stream
