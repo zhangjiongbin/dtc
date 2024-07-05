@@ -1,0 +1,31 @@
+name: Build DTB
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install device-tree-compiler
+      run: sudo apt-get install -y device-tree-compiler
+
+    - name: Compile DTS to DTB
+      run: |
+        mkdir -p output
+        dtc -I dts -O dtb -o output/example.dtb path/to/your/example.dts
+
+    - name: Upload DTB file
+      uses: actions/upload-artifact@v2
+      with:
+        name: example-dtb
+        path: output/example.dtb
