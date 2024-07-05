@@ -28,4 +28,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: YS-F3588A2-dtb
-        path: /YS-F3588A2.dtb
+        path: test/search_dir
