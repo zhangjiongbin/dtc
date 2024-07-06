@@ -21,7 +21,7 @@ jobs:
 
     - name: Compile DTS to DTB
       run: |
-        dtc -I dts -O dtb -o *.dtb *.dts
+        dtc -I dts -O dtb -o YS-F3588A.dtb YS-F3588A.dts
 
     - name: Create Release
       id: create_release
