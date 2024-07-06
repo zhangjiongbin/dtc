@@ -29,8 +29,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       with:
-        tag_name: 'v1.0.3'  # 可根据需要修改版本号
-        release_name: 'DTB Release3'
+        tag_name: 'v1.0.2'  # 可根据需要修改版本号
+        release_name: 'DTB Release2'
         draft: false
         prerelease: false
 
