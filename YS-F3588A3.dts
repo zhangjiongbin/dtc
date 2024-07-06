@@ -15980,7 +15980,7 @@
 		WIFI,host_wake_irq = <0x147 0x00 0x00>;
 		WIFI,poweren_gpio = <0x147 0x18 0x00>;
 		status = "okay";
-		phandle = <0x409>;
+		phandle = <0x574>;
 	};
 
 	wireless-bluetooth {
