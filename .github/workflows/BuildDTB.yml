@@ -44,9 +44,4 @@ jobs:
         asset_name: YS-F3588A3.dtb
         asset_content_type: application/octet-stream
 
- - name: 删除自动发布的旧固件
-      uses: dev-drprasad/delete-older-releases@v0.3.3
-      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
-      with:
-        keep_latest: 5
-        delete_tags: true
+
