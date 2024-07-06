@@ -21,7 +21,7 @@ jobs:
 
     - name: Compile DTS to DTB
       run: |
-        dtc -I dts -O dtb -o $GITHUB_WORKSPACE/*.dtb $GITHUB_WORKSPACE/*.dts
+        dtc -I dts -O dtb -o *.dtb *.dts
 
     - name: Create Release
       id: create_release
