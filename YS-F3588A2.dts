@@ -15980,6 +15980,7 @@
 		pinctrl-0 = <0x2bb>;
 		WIFI,host_wake_irq = <0x163 0x0b 0x00>;
 		WIFI,poweren_gpio = <0x163 0x09 0x00>;
+		keep_wifi_power_on;
 		status = "okay";
 		phandle = <0x574>;
 	};
