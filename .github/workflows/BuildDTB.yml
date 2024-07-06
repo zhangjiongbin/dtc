@@ -21,7 +21,7 @@ jobs:
 
     - name: Compile DTS to DTB
       run: |
-        dtc -I dts -O dtb -o YS-F3588A3.dtb YS-F3588A3.dts
+        dtc -I dts -O dtb -o $GITHUB_WORKSPACE/*.dtb $GITHUB_WORKSPACE/*.dts
 
     - name: Create Release
       id: create_release
@@ -40,8 +40,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: YS-F3588A3.dtb
-        asset_name: YS-F3588A3.dtb
+        asset_path: YS-F3588A.dtb
+        asset_name: YS-F3588A.dtb
         asset_content_type: application/octet-stream
 
 
