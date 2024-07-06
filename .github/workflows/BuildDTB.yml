@@ -29,8 +29,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       with:
-        tag_name: 'v1.0.0'  # 可根据需要修改版本号
-        release_name: 'DTB Release'
+        tag_name: 'v1.0.3'  # 可根据需要修改版本号
+        release_name: 'DTB Release3'
         draft: false
         prerelease: false
 
@@ -43,3 +43,10 @@ jobs:
         asset_path: YS-F3588A3.dtb
         asset_name: YS-F3588A3.dtb
         asset_content_type: application/octet-stream
+
+ - name: 删除自动发布的旧固件
+      uses: dev-drprasad/delete-older-releases@v0.3.3
+      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
+      with:
+        keep_latest: 5
+        delete_tags: true
