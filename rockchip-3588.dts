@@ -14378,7 +14378,7 @@
 
 			wifi-host-wake-irq {
 				rockchip,pins = <0x00 0x0a 0x00 0x17f>;
-				phandle = <0x1bd>;
+				phandle = <0x2bb>;
 			};
 		};
 
