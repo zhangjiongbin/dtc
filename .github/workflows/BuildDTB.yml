@@ -21,7 +21,7 @@ jobs:
 
     - name: Compile DTS to DTB
       run: |
-        dtc -I dts -O dtb -o rockchip-3588.dtb rockchip-3588.dts
+        dtc -I dts -O dtb -o rk3568-ynh518.dtb rk3568-ynh518.dts
 
     - name: Create Release
       id: create_release
